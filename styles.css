@@ -154,9 +154,19 @@ h1 {
 }
 
 .summary,
-.coach,
 .memo {
   padding: 21px 24px;
+}
+
+.coach {
+  padding: 15px 20px;
+  background: rgba(250, 253, 255, 0.92);
+  border-color: rgba(23, 74, 183, 0.1);
+}
+
+.coach h2 {
+  font-size: 1rem;
+  color: #48638c;
 }
 
 .next-task {
@@ -176,9 +186,10 @@ h1 {
 }
 
 .coach-line {
-  margin: 10px 0 0;
-  line-height: 1.45;
-  color: var(--ink);
+  margin: 8px 0 0;
+  line-height: 1.42;
+  color: #5e7395;
+  font-size: 0.94rem;
 }
 
 .actions {
