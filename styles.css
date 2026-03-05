@@ -160,20 +160,10 @@ h1 {
 }
 
 .comments {
-  padding: 21px 24px;
+  padding: 2px 0 0;
 }
 
-.comments-note {
-  margin: 10px 0 14px;
-  color: var(--muted);
-  line-height: 1.42;
-}
-
-.comments-embed {
-  min-height: 140px;
-}
-
-.comments-embed .utterances {
+.comments .utterances {
   max-width: 100%;
 }
 
@@ -437,7 +427,6 @@ input:focus-visible {
   .hero,
   .summary,
   .coach,
-  .comments,
   .memo,
   .stage {
     padding: 18px;
