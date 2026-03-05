@@ -12,6 +12,20 @@ const STAGES = [
         id: "carrier_sim_protect_off",
         title: "통신사 유심 보호 서비스 가입 여부 확인 후 해지",
         note: "켜진 상태로 유심 이동 시 통화/데이터가 막힐 수 있습니다.",
+        links: [
+          {
+            label: "SKT 검색",
+            url: "https://www.google.com/search?q=SKT+%EC%9C%A0%EC%8B%AC+%EB%B3%B4%ED%98%B8+%EC%84%9C%EB%B9%84%EC%8A%A4+%ED%95%B4%EC%A7%80",
+          },
+          {
+            label: "KT 검색",
+            url: "https://www.google.com/search?q=KT+%EC%9C%A0%EC%8B%AC+%EB%B3%B4%ED%98%B8+%EC%84%9C%EB%B9%84%EC%8A%A4+%ED%95%B4%EC%A7%80",
+          },
+          {
+            label: "LG U+ 검색",
+            url: "https://www.google.com/search?q=LGU%2B+%EC%9C%A0%EC%8B%AC+%EB%B3%B4%ED%98%B8+%EC%84%9C%EB%B9%84%EC%8A%A4+%ED%95%B4%EC%A7%80",
+          },
+        ],
       },
       {
         id: "kakao_not_installed_new",
@@ -382,6 +396,7 @@ function render() {
       const checkbox = taskNode.querySelector(".task-checkbox");
       const title = taskNode.querySelector(".task-title");
       const note = taskNode.querySelector(".task-note");
+      const linksWrap = taskNode.querySelector(".task-links");
 
       checkbox.checked = Boolean(state[task.id]);
       checkbox.dataset.taskId = task.id;
@@ -389,6 +404,21 @@ function render() {
 
       title.textContent = CRITICAL_TASK_IDS.has(task.id) ? `[필수] ${task.title}` : task.title;
       note.textContent = task.note;
+
+      if (Array.isArray(task.links) && task.links.length > 0) {
+        linksWrap.hidden = false;
+        linksWrap.innerHTML = "";
+        task.links.forEach((link) => {
+          const anchor = document.createElement("a");
+          anchor.href = link.url;
+          anchor.target = "_blank";
+          anchor.rel = "noopener noreferrer";
+          anchor.textContent = link.label;
+          linksWrap.appendChild(anchor);
+        });
+      } else {
+        linksWrap.hidden = true;
+      }
 
       taskNode.classList.toggle("done", checkbox.checked);
       taskList.appendChild(taskNode);
