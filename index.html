@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="갤럭시 S26 자급제 사용자를 위한 셀프 이전 웹 체크리스트. Smart Switch, 유심/eSIM 전환, 카카오톡/금융앱 점검까지 단계별로 안전하게 진행하세요." />
+  <meta name="keywords" content="갤럭시 S26, Smart Switch, 데이터 이전, 유심 옮기기, 자급제, 카카오톡 복원, 폰 변경 체크리스트" />
+  <meta name="author" content="Galaxy S26 Self Switch Mate" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0f6dff" />
+  <meta name="format-detection" content="telephone=no" />
+  <link id="canonicalUrl" rel="canonical" href="https://notoow.github.io/samsung-smart-switch/" />
+
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Galaxy S26 셀프 이전 체크메이트" />
+  <meta property="og:title" content="Galaxy S26 셀프 이전 체크메이트" />
+  <meta property="og:description" content="Smart Switch부터 유심 전환, 금융앱 검증까지 한 번에 끝내는 실전 체크리스트" />
+  <meta id="metaOgUrl" property="og:url" content="https://notoow.github.io/samsung-smart-switch/" />
+  <meta property="og:image" content="https://notoow.github.io/samsung-smart-switch/assets/og-image.png" />
+  <meta property="og:image:alt" content="Galaxy S26 셀프 이전 체크메이트 대표 이미지" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Galaxy S26 셀프 이전 체크메이트" />
+  <meta name="twitter:description" content="자급제 갤럭시 S26 셀프 이전을 위한 단계형 체크리스트" />
+  <meta name="twitter:image" content="https://notoow.github.io/samsung-smart-switch/assets/og-image.png" />
+  <title>Galaxy S26 셀프 이전 체크메이트</title>
+
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+  <link rel="icon" href="./assets/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
+  <link rel="manifest" href="./site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Urbanist:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <script id="structuredData" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Galaxy S26 셀프 이전 체크메이트",
+      "description": "갤럭시 S26 자급제 사용자를 위한 셀프 이전 가이드 웹 앱",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Android",
+      "inLanguage": "ko-KR",
+      "isAccessibleForFree": true,
+      "url": "https://notoow.github.io/samsung-smart-switch/",
+      "image": "https://notoow.github.io/samsung-smart-switch/assets/og-image.png"
+    }
+  </script>
+</head>
+<body>
+  <div class="ambient ambient-left" aria-hidden="true"></div>
+  <div class="ambient ambient-right" aria-hidden="true"></div>
+
+  <main class="layout">
+    <header class="hero card">
+      <p class="eyebrow">Galaxy Device Setup Assistant</p>
+      <div class="hero-topline">
+        <span class="badge">비공식 가이드</span>
+        <span class="badge soft">Smart Switch 기반</span>
+      </div>
+      <h1>갤럭시 S26 셀프 이전 체크메이트</h1>
+      <p class="subtitle">
+        매장 도움 없이도, 데이터 이동부터 유심·금융앱 점검까지 한 번에 끝내는 실전 체크리스트
+      </p>
+      <p class="subtitle compact">
+        아래 항목은 사용자 제공 영상 내용을 기준으로 정리된 안내입니다.
+      </p>
+      <div class="hero-meta">
+        <div class="progress-wrap" aria-label="전체 진행률">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <p id="progressText" class="progress-text">0 / 0 완료 (0%)</p>
+      </div>
+    </header>
+
+    <section class="summary card">
+      <h2>지금 해야 할 일</h2>
+      <p id="nextTask" class="next-task">아직 시작 전입니다.</p>
+      <p id="riskAlert" class="risk-alert" hidden></p>
+      <div class="actions">
+        <button id="resetBtn" type="button" class="ghost">전체 초기화</button>
+        <button id="exportBtn" type="button" class="ghost">상태 내보내기</button>
+        <button id="importBtn" type="button" class="ghost">상태 불러오기</button>
+        <input id="importInput" type="file" accept="application/json" hidden />
+      </div>
+    </section>
+
+    <section class="coach card">
+      <h2>따라하기 멘트</h2>
+      <p id="coachLine" class="coach-line">
+        새 폰 박스를 보기만 하지 말고, STEP 00부터 하나씩 체크해 보세요.
+      </p>
+    </section>
+
+    <section id="checklistRoot" class="checklist-grid" aria-label="폰 변경 체크리스트"></section>
+
+    <section class="memo card">
+      <div class="memo-head">
+        <h2>개인 메모</h2>
+        <button id="clearMemoBtn" type="button" class="ghost small">메모 지우기</button>
+      </div>
+      <textarea
+        id="memoInput"
+        rows="6"
+        placeholder="예: 카카오 계정 비밀번호, 금융앱 재인증 순서, eSIM 변경 완료 시간"
+      ></textarea>
+    </section>
+  </main>
+
+  <template id="stageTemplate">
+    <article class="stage card">
+      <header class="stage-header">
+        <p class="stage-kicker"></p>
+        <h3 class="stage-title"></h3>
+        <p class="stage-desc"></p>
+        <p class="stage-progress"></p>
+      </header>
+      <ul class="task-list"></ul>
+    </article>
+  </template>
+
+  <template id="taskTemplate">
+    <li class="task-item">
+      <label>
+        <input class="task-checkbox" type="checkbox" />
+        <span class="task-content">
+          <span class="task-title"></span>
+          <span class="task-note"></span>
+        </span>
+      </label>
+    </li>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "Galaxy S26 셀프 이전 체크메이트",
+  "short_name": "S26 체크메이트",
+  "description": "갤럭시 S26 자급제 셀프 이전 체크리스트 웹 앱",
+  "lang": "ko-KR",
+  "start_url": "/samsung-smart-switch/",
+  "scope": "/samsung-smart-switch/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eef3fb",
+  "theme_color": "#0f6dff",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

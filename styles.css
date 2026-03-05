@@ -1,0 +1,373 @@
+:root {
+  --bg: #eef3fb;
+  --ink: #0d1b33;
+  --muted: #5a6c89;
+  --panel: rgba(255, 255, 255, 0.92);
+  --panel-border: rgba(23, 74, 183, 0.14);
+  --brand: #0f6dff;
+  --brand-strong: #0a46b8;
+  --accent: #12b5ff;
+  --danger-bg: #ffe8e7;
+  --danger-ink: #8f1f24;
+  --shadow: 0 18px 44px rgba(8, 41, 111, 0.14);
+  --radius: 24px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(28, 143, 255, 0.22) 0%, transparent 36%),
+    radial-gradient(circle at 82% 18%, rgba(22, 195, 255, 0.22) 0%, transparent 30%),
+    linear-gradient(160deg, #eaf1ff 0%, var(--bg) 44%, #f5f9ff 100%);
+  min-height: 100vh;
+  padding: 38px 18px 64px;
+}
+
+.ambient {
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  filter: blur(44px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-left {
+  top: -90px;
+  left: -70px;
+  background: radial-gradient(circle, rgba(15, 109, 255, 0.26) 0%, transparent 64%);
+}
+
+.ambient-right {
+  bottom: -120px;
+  right: -90px;
+  background: radial-gradient(circle, rgba(18, 181, 255, 0.26) 0%, transparent 64%);
+}
+
+.layout {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(7px);
+}
+
+.hero {
+  padding: 28px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--brand-strong);
+  font-family: "Urbanist", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+.hero-topline {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 6px 11px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, var(--brand) 0%, var(--brand-strong) 100%);
+}
+
+.badge.soft {
+  color: var(--brand-strong);
+  background: #d9e9ff;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Urbanist", "Noto Sans KR", sans-serif;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: clamp(1.65rem, 2.8vw, 2.45rem);
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.subtitle.compact {
+  margin-top: 6px;
+  font-size: 0.92rem;
+}
+
+.hero-meta {
+  margin-top: 20px;
+}
+
+.progress-wrap {
+  width: 100%;
+  height: 12px;
+  background: #dde9ff;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--brand) 0%, var(--accent) 100%);
+  transition: width 320ms ease;
+}
+
+.progress-text {
+  margin: 9px 0 0;
+  color: var(--muted);
+}
+
+.summary,
+.coach,
+.memo {
+  padding: 21px 24px;
+}
+
+.next-task {
+  margin: 10px 0 0;
+  font-weight: 700;
+  line-height: 1.42;
+}
+
+.risk-alert {
+  margin: 10px 0 0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: var(--danger-bg);
+  color: var(--danger-ink);
+  font-size: 0.92rem;
+  line-height: 1.38;
+}
+
+.coach-line {
+  margin: 10px 0 0;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  font: inherit;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.ghost {
+  padding: 10px 14px;
+  background: #dfeafc;
+  color: var(--ink);
+}
+
+.ghost:hover {
+  background: #cedffd;
+}
+
+.small {
+  padding: 6px 10px;
+  font-size: 0.88rem;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+
+.stage {
+  grid-column: span 6;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(9px);
+  animation: rise 0.5s ease forwards;
+  animation-delay: calc(var(--order, 0) * 85ms);
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stage-complete {
+  border-color: rgba(18, 181, 255, 0.32);
+}
+
+.stage-header {
+  margin-bottom: 12px;
+}
+
+.stage-kicker {
+  margin: 0;
+  color: var(--brand-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+}
+
+.stage-title {
+  margin-top: 3px;
+  font-size: 1.12rem;
+}
+
+.stage-desc {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.stage-progress {
+  margin: 8px 0 0;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: #dcebff;
+  color: var(--brand-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.task-item label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border-radius: 14px;
+  padding: 8px 9px;
+  transition: background-color 220ms ease;
+}
+
+.task-item label:hover {
+  background: rgba(15, 109, 255, 0.06);
+}
+
+.task-checkbox {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--brand);
+  flex-shrink: 0;
+}
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.task-title {
+  line-height: 1.35;
+}
+
+.task-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.task-item.done .task-title {
+  text-decoration: line-through;
+  color: #6c7992;
+}
+
+.memo-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+textarea {
+  margin-top: 12px;
+  width: 100%;
+  resize: vertical;
+  border-radius: 14px;
+  border: 1px solid #bfd2f5;
+  padding: 12px;
+  font: inherit;
+  color: var(--ink);
+  background: #f8fbff;
+}
+
+textarea:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(15, 109, 255, 0.35);
+  outline-offset: 2px;
+}
+
+@media (max-width: 960px) {
+  .stage {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 24px 12px 50px;
+  }
+
+  .hero,
+  .summary,
+  .coach,
+  .memo,
+  .stage {
+    padding: 18px;
+    border-radius: 18px;
+  }
+}
