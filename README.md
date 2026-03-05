@@ -23,13 +23,13 @@
 - `meta description`, `canonical`, `robots`, Open Graph, Twitter Card 반영
 - 구조화 데이터(JSON-LD `WebApplication`) 반영
 - `robots.txt`, `sitemap.xml`, `site.webmanifest` 포함
-- `favicon.ico`, `favicon.svg`, `apple-touch-icon`, `og-image-v2.png` 포함
+- `favicon.ico`, `favicon.svg`, `apple-touch-icon`, `og-image-v3.png` 포함
 - 웹 폰트 `Pretendard` 적용
 
 ## OG 이미지 재생성
 
 - 스크립트: `scripts/generate_og_image.py`
-- 산출물: `assets/og-image-v2.png`
+- 산출물: `assets/og-image-v3.png`
 - 실행: `python scripts/generate_og_image.py`
 
 ## GitHub Pages
