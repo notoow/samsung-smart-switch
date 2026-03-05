@@ -41,6 +41,15 @@
 - 최초 1회 GitHub 저장소 설정:
   - `Settings > Pages > Source`에서 `GitHub Actions` 선택
 
+## 댓글(Utterances) 설정
+
+- 본 프로젝트는 `Utterances`(GitHub Issues 기반 댓글)를 사용합니다.
+- 저장소 관리자 계정으로 아래를 1회 진행해야 댓글이 표시됩니다.
+  - `https://utteranc.es/` 접속
+  - Repository: `notoow/samsung-smart-switch` 선택
+  - GitHub App 설치(Authorize)
+- 저장소 `Issues` 기능은 이미 켜져 있어야 하며(현재 켜짐), 이후 페이지에서 댓글이 정상 동작합니다.
+
 ## 주의
 
 - 본 앱은 비공식 가이드입니다.
