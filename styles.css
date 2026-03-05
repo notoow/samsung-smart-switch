@@ -22,7 +22,7 @@
 body {
   margin: 0;
   color: var(--ink);
-  font-family: "Noto Sans KR", "Malgun Gothic", sans-serif;
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
   background:
     radial-gradient(circle at 12% 10%, rgba(28, 143, 255, 0.22) 0%, transparent 36%),
     radial-gradient(circle at 82% 18%, rgba(22, 195, 255, 0.22) 0%, transparent 30%),
@@ -76,7 +76,8 @@ body {
 .eyebrow {
   margin: 0;
   color: var(--brand-strong);
-  font-family: "Urbanist", sans-serif;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-size: 0.82rem;
@@ -109,7 +110,7 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-family: "Urbanist", "Noto Sans KR", sans-serif;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
 }
 
 h1 {
